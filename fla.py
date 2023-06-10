@@ -2,14 +2,31 @@ import streamlit as st
 import requests
 from urllib.parse import parse_qs
 
+
+
+
+
+
 # Parse the URL to get the parameters
 params = st.experimental_get_query_params()
+
+
 
 # Check if the user token exists in the URL
 token = params.get('token', [None])[0]
 
 # Set page layout
 st.set_page_config(page_title="Construction Layout Confirmation", layout="wide")
+
+hide_st_style ="""
+<style>
+#MainMenu {visibility:hidden;}
+footer {visibility:hidden;}
+</style>
+"""
+
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 # Company logo
 col1, col2, col3 = st.columns([1, 6, 1])
