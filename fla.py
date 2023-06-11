@@ -46,32 +46,57 @@ if token:
 st.write("FLA: Homeowner")
 
 # Confirmation letter content
-st.markdown("...")  # Add your markdown here
+st.markdown("Hello,")
 
-# Download plans button
+st.markdown("Please view your final layout here.") # Add your markdown here
+
 st.markdown(
     """
+    <style>
+    .rounded-button {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #0080ff;
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+    }
+
+    .rounded-button:hover {
+        background-color: #005cb3;
+    }
+    </style>
+
     <div style="text-align: center;">
-        <a href="your_download_link" target="_blank">
-            <button class="btn btn-success" style="color: white; font-size: 20px;">Download plans</button>
-        </a>
+        <a href="your_download_link" target="_blank" class="rounded-button">Download plans</a>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-# Buttons for approval and denial
-col7, col8, col9 = st.columns([2,1,2])
-with col8:
-    if st.button("Approve"):
-        # rest of your code here
-        pass
 
-col10, col11, col12 = st.columns([2,1,2])
-with col11:
-    if st.button("Deny"):
-        # rest of your code here
-        pass
+col1, col2, col3 = st.columns([2, 1, 2])
+
+with col2:
+    with st.container():
+        st.write("")  # Add an empty placeholder to reserve space for the button
+        approve_button = st.button("Approve")
+
+col4, col5, col6 = st.columns([2, 1, 2])
+
+with col5:
+    with st.container():
+        st.write("")  # Add an empty placeholder to reserve space for the button
+        deny_button = st.button("Deny")
+
+
+
+
+
 
 # Footer
 st.markdown(
